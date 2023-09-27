@@ -1,3 +1,6 @@
+import random, math
+
+
 def test_greeting():
     """
     Напишите программу, которая выводит на экран приветствие.
@@ -6,8 +9,10 @@ def test_greeting():
     age = 25
     # TODO Сформируйте нужную строку
     output = f"Привет, {name}! Тебе {age} лет."
+    print(output)
     # Проверяем результат
     assert output == "Привет, Анна! Тебе 25 лет."
+
 
 def test_rectangle():
     """
@@ -31,7 +36,7 @@ def test_circle():
     Напишите программу, которая берет радиус круга и выводит на экран его длину и площадь.
     Используйте константу PI
     """
-    import math
+
     r = 23
     # TODO сосчитайте площадь
     area = math.pi * r ** 2
@@ -50,7 +55,8 @@ def test_random_list():
     """
 
     # TODO создайте список
-    l = [1, 5, 13, 8, 3, 5, 4, 56, 33, 10]
+    l = [random.randint(1, 100) for _ in range(10)]
+
     l.sort()
     assert len(l) == 10
     assert l[0] < l[-1]
